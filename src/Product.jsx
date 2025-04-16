@@ -1,13 +1,26 @@
 import "./Product.css";
+import Price from "./Price";
 
-function Product({title, price,features2}){
-    return(
+function Product({title, idx}){
+    // let styles = {backgroundColor : price > 30000 ? "yellow" : ""};
+    // // const list = features.map((feature) => <li>{feature}</li>);
+
+    let oldPrices =["12,495","11,900","1,599","599"];
+    let newPrices =["8,999","9,199","899","278"];
+    let description = [
+        ["8,000 DPI","5 Programmable buttons"],
+        ["intuitive surface","designed for iPad Pro"],
+        ["designed for iPad Pro","intuitive surface"],
+        ["Wireless","optical orientation"],
+    ];
+     return(
         <div className="Product">
-            <h3>{title}</h3>
-            <h5>Price: {price}</h5>
-            <h5>{features2.a}</h5>
+            <h4>{title}</h4>
+            <p>{description[idx][0]}</p>
+            <p>{description[idx][1]}</p>
+            <Price oldPrice={oldPrices[idx]} newPrice={newPrices[idx]}/>
         </div>
-    );
+    );   
 }
 
 export default Product;
