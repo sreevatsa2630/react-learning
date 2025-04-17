@@ -10,7 +10,6 @@ export default function Button(){
         <div>
             <button onClick={printHello}>Click me!</button>
             <p onMouseOver={printBye}>This Para is for event demo</p>
-
         </div>
     );
 }
